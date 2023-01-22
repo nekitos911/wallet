@@ -1,6 +1,6 @@
 package com.github.nekitos911;
 
-public class NotificationServiceApplication {
+public class RegistryApplication {
     public static void main(String[] args) {
 
     }
