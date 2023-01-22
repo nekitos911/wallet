@@ -21,16 +21,16 @@ zuul:
 
     routes:
       account-service:
-        path: /accounts/**
+        path: /api/v1/accounts/**
         serviceId: account-service
         stripPrefix: false
 
         bill-service:
-          path: /bills/**
+          path: /api/v1/bills/**
           serviceId: bill-service
           stripPrefix: false
 
         deposit-service:
-          path: /deposits/**
+          path: /api/v1/deposits/**
           serviceId: deposit-service
           stripPrefix: false
