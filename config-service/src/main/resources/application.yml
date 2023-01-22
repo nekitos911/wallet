@@ -1,0 +1,14 @@
+server:
+  port: 8080
+
+spring:
+  profiles:
+    active: native
+  security:
+    user:
+      password: admin
+  cloud:
+    config:
+      server:
+        native:
+          search-location: classpath:/services

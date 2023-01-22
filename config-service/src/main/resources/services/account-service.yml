@@ -1,0 +1,15 @@
+server:
+  port: 8081
+
+spring:
+  jpa:
+    database: POSTGRESQL
+    properties.hibernate.temp.user_jdbc_metadata_defaults: false
+    hibernate:
+      ddl-auto: create
+    properties:
+      platform: postgres
+      url: jdbc:postgresql://localhost:5432/account_service_db
+      username: postgres
+      password: root
+      driver-class-name: org.postgresql.Driver
