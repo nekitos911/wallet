@@ -45,9 +45,9 @@ dependencies {
     implementation "org.springframework.boot:spring-boot-starter-amqp:2.7.5"
     implementation "org.springframework.cloud:spring-cloud-starter-config"
     implementation "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client"
-    implementation "org.springframework.cloud:spring-cloud-starter-sleuth:3.1.6"
+    implementation 'io.micrometer:micrometer-tracing:1.0.1'
     implementation "org.springframework.cloud:spring-cloud-starter-netflix-hystrix:2.2.10.RELEASE"
-    implementation "org.postgresql:postgresql:42.2.5"
+    runtimeOnly "org.postgresql:postgresql"
 
 
     compileOnly 'org.projectlombok:lombok'
