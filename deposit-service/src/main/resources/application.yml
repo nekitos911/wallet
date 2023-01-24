@@ -1,9 +1,10 @@
 spring:
   application:
     name: deposit-service
+  config:
+    import: optional:configserver:http://localhost:8081
   cloud:
     config:
-      uri: http://localhost:8081
       fail-fast: true
-      username: admin
-      password: user
+      username: user
+      password: admin
