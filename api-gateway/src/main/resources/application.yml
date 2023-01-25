@@ -1,9 +1,10 @@
 spring:
   application:
     name: api-gateway
+  config:
+    import: optional:configserver:http://localhost:8081
   cloud:
     config:
-      import: optional:configserver:http://localhost:8081
       fail-fast: true
       username: user
       password: admin
