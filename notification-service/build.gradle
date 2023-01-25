@@ -28,6 +28,12 @@ jar {
     }
 }
 
+configurations.all {
+    resolutionStrategy {
+        exclude group: "org.eclipse.angus", module: "angus-activation"
+    }
+}
+
 ext {
     set('springCloudVersion', "2022.0.0")
 }
@@ -38,14 +44,25 @@ dependencyManagement {
     }
 }
 
+configurations.all {
+    resolutionStrategy {
+        exclude group: "org.eclipse.angus", module: "jakarta.activation"
+    }
+}
+
+
 dependencies {
-    implementation "org.springframework.boot:spring-boot-starter-mail:2.7.5"
-    implementation "org.springframework.boot:spring-boot-starter-web:2.7.5"
+    implementation "org.springframework.boot:spring-boot-starter-mail:3.0.2"
+    implementation "org.springframework.boot:spring-boot-starter-websocket:3.0.2"
     implementation "org.springframework.boot:spring-boot-starter-actuator"
-    implementation "org.springframework.boot:spring-boot-starter-amqp:2.7.5"
-    implementation "org.springframework.cloud:spring-cloud-starter-config"
+    implementation "org.springframework.boot:spring-boot-starter-amqp:3.0.2"
+    implementation ("org.springframework.cloud:spring-cloud-starter-config") {
+        exclude group: "org.eclipse.angus", module: "angus-activation"
+    }
+
     implementation "org.springframework.cloud:spring-cloud-starter-netflix-eureka-client"
     implementation 'io.micrometer:micrometer-tracing:1.0.1'
+    implementation "com.sun.activation:jakarta.activation:2.0.1"
     implementation "org.springframework.cloud:spring-cloud-starter-netflix-hystrix:2.2.10.RELEASE"
     runtimeOnly "org.postgresql:postgresql"
 
