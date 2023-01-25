@@ -45,7 +45,7 @@ public class BillControllerV1 {
         return ResponseEntity.ok(new BillResponseDto(billService.deleteBill(billId)));
     }
 
-    @GetMapping("/{accountId}")
+    @GetMapping("/account/{accountId}")
     public ResponseEntity<List<BillResponseDto>> getBillsByAccountId(@PathVariable Long accountId) {
         return ResponseEntity.ok(
                 billService.getBillsByAccountID(accountId).stream()
