@@ -1,5 +1,5 @@
 server:
-  port: 8989
+  port: 8765
 
 hystrix:
   command:
@@ -13,24 +13,23 @@ ribbon:
   ReadTimeout: 20000
   ConnectTimeout: 20000
 
-zuul:
-  ignoredServices: '*'
-  host:
-    connect-timeout-mills: 20000
-    socket-timeout-mills: 20000
-
-    routes:
-      account-service:
-        path: /api/v1/accounts/**
-        serviceId: account-service
-        stripPrefix: false
-
-        bill-service:
-          path: /api/v1/bills/**
-          serviceId: bill-service
-          stripPrefix: false
-
-        deposit-service:
-          path: /api/v1/deposits/**
-          serviceId: deposit-service
-          stripPrefix: false
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: account-service
+          uri: lb://account-service
+          predicates:
+            - Path=/api/v1/accounts/**, /api/v1/accounts
+        - id: bill-service
+          uri: lb://bill-service
+          predicates:
+            - Path=/api/v1/bills/**
+        - id: deposit-service
+          uri: lb://deposit-service
+          predicates:
+            - Path=/api/v1/deposits/**
