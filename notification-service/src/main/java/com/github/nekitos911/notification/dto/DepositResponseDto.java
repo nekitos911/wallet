@@ -1,4 +1,4 @@
-package com.github.nekitos911.service.dto;
+package com.github.nekitos911.notification.dto;
 
 import lombok.Data;
 

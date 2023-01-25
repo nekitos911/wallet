@@ -1,4 +1,4 @@
-package com.github.nekitos911.config;
+package com.github.nekitos911.notification.config;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.core.*;

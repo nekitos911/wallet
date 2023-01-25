@@ -1,10 +1,10 @@
-package com.github.nekitos911.service.impl;
+package com.github.nekitos911.notification.service.impl;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectReader;
-import com.github.nekitos911.service.DepositMessageHandler;
-import com.github.nekitos911.service.dto.DepositResponseDto;
+import com.github.nekitos911.notification.service.DepositMessageHandler;
+import com.github.nekitos911.notification.dto.DepositResponseDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.amqp.core.Message;
 import org.springframework.mail.SimpleMailMessage;
