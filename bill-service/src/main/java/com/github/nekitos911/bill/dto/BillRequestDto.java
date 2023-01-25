@@ -15,11 +15,16 @@ public class BillRequestDto {
     private BigDecimal amount;
     private Boolean isDefault;
     private Boolean overdraftEnabled;
+    private OffsetDateTime creationDate;
+    private OffsetDateTime modifiedDate;
 
+    @SuppressWarnings("unused")
     public BillRequestDto(Bill bill) {
         billId = bill.getBillId();
         accountId = bill.getAccountId();
         isDefault = bill.getIsDefault();
         overdraftEnabled = bill.getOverdraftEnabled();
+        creationDate = bill.getCreationDate();
+        modifiedDate = bill.getModifiedDate();
     }
 }

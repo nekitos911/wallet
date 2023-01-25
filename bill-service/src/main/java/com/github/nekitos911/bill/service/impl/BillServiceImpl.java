@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @RequiredArgsConstructor
 @Service
@@ -48,5 +49,10 @@ public class BillServiceImpl implements BillService {
         var bill = getBillById(billId);
         billRepository.deleteById(billId);
         return bill;
+    }
+
+    @Override
+    public List<Bill> getBillsByAccountID(Long accountId) {
+        return billRepository.getAllByAccountId(accountId);
     }
 }

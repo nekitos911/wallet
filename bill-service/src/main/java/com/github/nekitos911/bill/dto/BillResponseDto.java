@@ -3,8 +3,6 @@ package com.github.nekitos911.bill.dto;
 import com.github.nekitos911.bill.entity.Bill;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.hibernate.annotations.CreationTimestamp;
-import org.springframework.data.annotation.LastModifiedDate;
 
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
