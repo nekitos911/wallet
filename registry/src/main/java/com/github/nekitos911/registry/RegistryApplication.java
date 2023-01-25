@@ -1,4 +1,4 @@
-package com.github.nekitos911;
+package com.github.nekitos911.registry;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
